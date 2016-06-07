@@ -1,3 +1,0 @@
-/subsystem=teiid/translator=typename:add(module=org.jboss.teiid.translator.typename)
-
-
