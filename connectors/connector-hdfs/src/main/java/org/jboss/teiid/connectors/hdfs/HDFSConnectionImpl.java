@@ -12,6 +12,7 @@ import javax.resource.ResourceException;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.hdfs.DistributedFileSystem;
+import org.jboss.teiid.connectors.hdfs.HDFSConnection;
 import org.teiid.core.BundleUtil;
 import org.teiid.logging.LogConstants;
 import org.teiid.logging.LogManager;
