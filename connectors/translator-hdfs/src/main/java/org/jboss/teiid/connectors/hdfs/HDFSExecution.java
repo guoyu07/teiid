@@ -72,14 +72,12 @@ public class HDFSExecution implements ResultSetExecution {
         this.query = query;
     }
     
-    @Override
     public void execute() throws TranslatorException {
         // Log our command
         LogManager.logDetail(LogConstants.CTX_CONNECTOR, HDFSPlugin.UTIL.getString("execute_query", new Object[] { "HDFS", command })); //$NON-NLS-1$
     }    
 
 
-    @Override
     public List<?> next() throws TranslatorException, DataNotAvailableException {
         if (results.hasNext()) {
             return projectRow(results.next(), neededColumns);
@@ -101,14 +99,12 @@ public class HDFSExecution implements ResultSetExecution {
         return output;    
     }
 
-    @Override
     public void close() {
         LogManager.logDetail(LogConstants.CTX_CONNECTOR, HDFSPlugin.UTIL.getString("close_query")); //$NON-NLS-1$
 
     
     }
 
-    @Override
     public void cancel() throws TranslatorException {
         LogManager.logDetail(LogConstants.CTX_CONNECTOR, HDFSPlugin.UTIL.getString("cancel_query")); //$NON-NLS-1$
     }

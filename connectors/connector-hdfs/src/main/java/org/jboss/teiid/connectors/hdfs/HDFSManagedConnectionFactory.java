@@ -3,25 +3,33 @@
  */
 package org.jboss.teiid.connectors.hdfs;
 
-import javax.resource.ResourceException;
-
 import org.teiid.core.BundleUtil;
 import org.teiid.resource.spi.BasicConnectionFactory;
 import org.teiid.resource.spi.BasicManagedConnectionFactory;
 
 public class HDFSManagedConnectionFactory extends BasicManagedConnectionFactory {
 
-	public static final BundleUtil UTIL = BundleUtil.getBundleUtil(HDFSManagedConnectionFactory.class);
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3779833921458368145L;
 
-	private String host;
+	public static final BundleUtil UTIL = BundleUtil.getBundleUtil(HDFSManagedConnectionFactory.class);
+	
+	private String host;	
 	private Integer port;
 
 	@Override
-	public BasicConnectionFactory<HDFSConnectionImpl> createConnectionFactory() throws ResourceException {
+	public BasicConnectionFactory<HDFSConnectionImpl> createConnectionFactory(){
 
 		return new BasicConnectionFactory<HDFSConnectionImpl>() {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 3839769575814170886L;
+
 			@Override
-			public HDFSConnectionImpl getConnection() throws ResourceException {
+			public HDFSConnectionImpl getConnection(){
 				return new HDFSConnectionImpl(HDFSManagedConnectionFactory.this);
 			}
 		};
@@ -39,7 +47,7 @@ public class HDFSManagedConnectionFactory extends BasicManagedConnectionFactory 
 		return port;
 	}
 
-	public void setPort(int prot) {
+	public void setPort(int port) {
 		this.port = port;
 	}
 
